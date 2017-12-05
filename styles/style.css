@@ -10,8 +10,9 @@ body {
 }
 
 .navbar img {
-  height: 40px;
-  width: 50px;
+  width: 10%;
+  position: absolute;
+  right: 0;
 }
 
 .search-bar {
