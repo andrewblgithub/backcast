@@ -1,7 +1,7 @@
 @import url("http://netdna.bootstrapcdn.com/bootstrap/3.0.0-rc2/css/bootstrap-glyphicons.css");
 
 body {
-  background: #f1f1f1;
+  background: #fcf6f2;
 }
 
 .navbar {
@@ -13,6 +13,13 @@ body {
   width: 10%;
   position: absolute;
   right: 0;
+  cursor: pointer;
+}
+
+@media (max-width: 770px) {
+  .navbar img {
+    display: none;
+  }
 }
 
 .search-bar {
@@ -27,7 +34,7 @@ body {
 .search-bar .btn {
   border-radius: 2px;
   border-color: #d3d3d3;
-  background: #f8f8f8;
+  background: #fcf6f2;
   width: 20%;
   margin-left: -1px;
 }

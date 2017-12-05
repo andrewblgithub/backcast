@@ -2,16 +2,17 @@ var SearchView = Backbone.View.extend({
 
   events: {
     'click .btn': 'btnHandler',
-    // 'keyup .form-control': 'btnHandler'
-    'keyup .form-control': 'enterHandler'
+    'keyup .form-control': 'searchRunner'
+  },
+
+  searchRunner: function(e) {
+    this.btnHandler();
+    this.enterHandler(e);
   },
 
   btnHandler: function() {
     let keyword = $('.form-control').val();
-    if (keyword) {
-      let debouncedSearch = _.debounce(AppView.prototype.search, 500);
-      debouncedSearch(keyword);
-    }
+    AppView.prototype.search(keyword);
   },
 
   enterHandler: function(e) {

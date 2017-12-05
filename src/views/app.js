@@ -15,8 +15,16 @@ var AppView = Backbone.View.extend({
       this.render();
     }
   },
+  
+  events: {
+    'click .navbar img': 'logoHandler'
+  },
 
-  search: function(keyword) {
+  logoHandler: function() {
+    this.search();
+  },
+
+  search: _.debounce(function(keyword) {
     var keyword = keyword || 'kirby nintendo';
     let url = 'https://www.googleapis.com/youtube/v3/search/?q=' + 
       keyword + 
@@ -35,7 +43,7 @@ var AppView = Backbone.View.extend({
         console.error('FAILURE!', data);
       }
     });
-  },
+  }, 500),
 
   render: function() {
     if (!this.$el.find('#container').html()) {
