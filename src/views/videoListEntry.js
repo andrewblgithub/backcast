@@ -15,9 +15,9 @@ var VideoListEntryView = Backbone.View.extend({
   render: function() {
     // console.log(this.model.attributes.snippet)
     this.$el.html(this.template());
-    this.$el.find('.media-object').attr('src', this.model.attributes.snippet.thumbnails.default.url);
-    this.$el.find('.video-list-entry-title').html(this.model.attributes.snippet.title);
-    this.$el.find('.video-list-entry-detail').html(this.model.attributes.snippet.description);
+    this.$el.find('.media-object').attr('src', this.model.get('snippet').thumbnails.default.url);
+    this.$el.find('.video-list-entry-title').html(this.model.get('snippet').title);
+    this.$el.find('.video-list-entry-detail').html(this.model.get('snippet').description);
     return this.$el;
   },
 
