@@ -40,7 +40,7 @@ var AppView = Backbone.View.extend({
   render: function() {
     if (!this.$el.find('#container').html()) {
       this.$el.html(this.template());
-    };
+    }
     this.$el.find('.list').html(this.videosView.render());
     this.$el.find('.player').html(this.videoPlayer.render(this.videos.models[0]));
     if (!this.$el.find('.search-bar').html()) {
